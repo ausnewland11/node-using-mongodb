@@ -1,4 +1,4 @@
-import { addnewProduct } from '../controllers/controllers.js'; //import controller
+import { addnewProduct, getProducts, getProductWithID } from '../controllers/controllers.js'; //import controller
 
 const routes = (app) => {
     //creating first route
@@ -6,6 +6,13 @@ const routes = (app) => {
 
         //first endpoint
         .post(addnewProduct);
+
+        //second endpoint
+        .get(getProducts);
+
+app.route(/products/:ProductID)
+
+    .get(getProductWithID);
 }
 
 //export routes so we can use elsewhere

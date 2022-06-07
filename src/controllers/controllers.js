@@ -19,3 +19,24 @@ export const addnewProduct = (req, res) => {
     });
 }
 
+//export function to get Products from DB
+export const getProducts = (req, res) => {
+    Product.find((err, Product) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json(Product);
+    });
+  
+}
+
+export const getProductWithID = (req, res) => {
+    Product.findById((req.params.ProductID, err, Product) => {
+    if (err) {
+        res.send(err);
+    }
+    res.json(Product);
+});
+}
+
+
