@@ -6,7 +6,7 @@ const app = express();
 const PORT = 4000;
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:/productsdb',
+mongoose.connect('mongodb://localhost/productsdb',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
