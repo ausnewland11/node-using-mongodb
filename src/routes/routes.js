@@ -1,4 +1,4 @@
-import { addnewProduct, getProducts, getProductWithID } from '../controllers/controllers.js'; //import controller
+import { addnewProduct, deleteProduct, getProducts, getProductWithID, updateProduct } from '../controllers/controllers.js'; //import controller
 
 const routes = (app) => {
     //creating first route
@@ -12,7 +12,11 @@ const routes = (app) => {
 
     app.route('/products/:ProductID')
         //single product
-        .get(getProductWithID);
+        .get(getProductWithID)
+
+        .put(updateProduct)
+
+        .delete(deleteProduct);
 }
 
 //export routes so we can use elsewhere
