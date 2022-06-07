@@ -19,24 +19,25 @@ export const addnewProduct = (req, res) => {
     });
 }
 
-//export function to get Products from DB
+//export function to get multiple Products from DB
 export const getProducts = (req, res) => {
-    Product.find((err, Product) => {
+    Product.find({}, (err, Product) => {
         if (err) {
             res.send(err);
         }
         res.json(Product);
     });
-  
+
 }
 
+//export function to get single product from DB
 export const getProductWithID = (req, res) => {
-    Product.findById((req.params.ProductID, err, Product) => {
-    if (err) {
-        res.send(err);
-    }
-    res.json(Product);
-});
+    Product.findById(req.params.ProductID, (err, Product) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json(Product);
+    });
 }
 
 

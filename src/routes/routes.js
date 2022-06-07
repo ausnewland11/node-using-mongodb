@@ -5,14 +5,14 @@ const routes = (app) => {
     app.route('/products')
 
         //first endpoint
-        .post(addnewProduct);
+        .post(addnewProduct)
 
-        //second endpoint
+     //multiple products
         .get(getProducts);
 
-app.route(/products/:ProductID)
-
-    .get(getProductWithID);
+    app.route('/products/:ProductID')
+        //single product
+        .get(getProductWithID);
 }
 
 //export routes so we can use elsewhere
